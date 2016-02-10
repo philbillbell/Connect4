@@ -11,6 +11,7 @@ namespace Connect4
         static void Main(string[] args)
         {
             displayBoard board = new displayBoard();
+            board.fill_board();
             board.show_board();
         }
     }

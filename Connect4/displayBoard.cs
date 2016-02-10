@@ -13,17 +13,37 @@ namespace Connect4
             rows = 6;
             cols = 7;
             board = new String[rows, cols];
+            
         }
+
+        public void fill_board()
+        {
+            for (int y = 0; y < rows; ++y)
+            {
+                for (int x = 0; x < cols; ++x)
+                {
+                    board[y, x] = "h";
+                }
+            }
+        }
+
 
         public void show_board()
         {
             for (int y = 0; y < rows; y++)
             {
-                Console.WriteLine("----------------------");
-                Console.WriteLine("| " + board[y,0] + " | " + board[y, 1] + " | " + board[y, 2] + " | " + board[y, 3] + " | " + board[y, 4] + " | " + board[y, 5] + " | " + board[y, 6] + " | ");
-                
+                Console.WriteLine("-----------------------------");
+                Console.Write("| ");
+                for (int x = 0; x < cols; x++)
+                {
+                    Console.BackgroundColor = (board[y, x] == "h") ? ConsoleColor.Blue: ConsoleColor.Red;
+                    Console.Write(" ");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.Write(" | ");
+                }
+                Console.WriteLine("");                
             }
-            Console.WriteLine("----------------------");
+            Console.WriteLine("-----------------------------");            
         }
 
         private int rows;
