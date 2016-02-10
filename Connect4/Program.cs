@@ -10,6 +10,8 @@ namespace Connect4
     {
         static void Main(string[] args)
         {
+            displayBoard board = new displayBoard();
+            board.show_board();
         }
     }
 }
