@@ -9,22 +9,29 @@ namespace Connect4_Test
     {
         void create_hotizontal_win(ref GameBoard board, int startX, int startY)
         {
-            for (int x = startX; x < 4; ++x)
+            for (int x = 0; x < 4; ++x)
             {
-                //board[startY,x] = "h";
-                board.insert(x, startY, "h");
+                board.insert(startX++, startY, "h");
             }
         }
 
         [TestMethod]
-        public void check_for_horizontal_win()
+        public void check_for_all_horizontal_win()
         {
             GameRules rules = new GameRules();
             GameBoard board = new GameBoard();
-            create_hotizontal_win(ref board, 0, 0);
-            Assert.AreEqual(rules.check_for_win(board), true);
+            board.init();
 
-
+            for (int y = 0; y < 6; ++y)
+            {
+                for (int x = 0; x < 4; ++x)
+                {
+                    create_hotizontal_win(ref board, x, y);
+                    Assert.AreEqual(rules.check_for_win(board), true);
+                    board.init();
+                }
+            }
+            
         }
     }
 }

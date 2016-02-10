@@ -12,14 +12,25 @@ namespace Game_Elements
         {
             _columns = 7;
             _rows = 6;
-            board = new String[_rows, _columns];
+            board = new String[_columns, _rows];
         }
 
         public GameBoard(int columns, int rows)
         {
             _columns = columns;
             _rows = rows;
-            board = new String[_rows, _columns];
+            board = new String[_columns, _rows];
+        }
+
+        public void init()
+        {
+            for (int y = 0; y < _rows; ++y)
+            {
+                for (int x = 0; x < _columns; ++x)
+                {
+                    board[x, y] = " ";
+                }
+            }
         }
 
         public int columns
@@ -39,15 +50,14 @@ namespace Game_Elements
             StringBuilder fullRow = new StringBuilder();
             for (int x = 0; x < _columns; ++x)
             {
-                fullRow.Append(board[y, x]);
+                fullRow.Append(board[x, y]);
             }
             return fullRow.ToString();
         }
 
         public bool insert(int x, int y, string dobber)
         {
-            board[y, x] = dobber;
-
+            board[x, y] = dobber;
             return true;
 
         }
