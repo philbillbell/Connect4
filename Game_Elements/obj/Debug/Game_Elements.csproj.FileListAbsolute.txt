@@ -2,3 +2,4 @@ H:\Development\Connect4\Game_Elements\bin\Debug\Game_Elements.dll
 H:\Development\Connect4\Game_Elements\bin\Debug\Game_Elements.pdb
 H:\Development\Connect4\Game_Elements\obj\Debug\Game_Elements.dll
 H:\Development\Connect4\Game_Elements\obj\Debug\Game_Elements.pdb
+H:\Development\Connect4\Game_Elements\obj\Debug\Game_Elements.csprojResolveAssemblyReference.cache

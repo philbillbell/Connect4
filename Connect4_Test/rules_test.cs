@@ -52,8 +52,9 @@ namespace Connect4_Test
             {
                 for (int y = 0; y < 3; ++y)
                 {
-                    create_hotizontal_win(ref board, x, y);
-                    Assert.AreEqual(rules.check_for_win(board), true);
+                    create_vertical_win(ref board, x, y);
+                    bool test = rules.check_for_win(board);
+                    Assert.AreEqual(test, true);
                     board.init();
                 }
             }

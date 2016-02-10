@@ -55,6 +55,18 @@ namespace Game_Elements
             return fullRow.ToString();
         }
 
+        public string getColumn(int x)
+        {
+            StringBuilder fullRow = new StringBuilder();
+            for (int y = 0; y < _rows; ++y)
+            {
+                fullRow.Append(board[x, y]);
+            }
+            return fullRow.ToString();
+        }
+
+        
+
         public bool insert(int x, int y, string dobber)
         {
             board[x, y] = dobber;
