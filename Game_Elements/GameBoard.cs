@@ -12,18 +12,20 @@ namespace Game_Elements
         {
             _columns = 7;
             _rows = 6;
-            board = new String[_columns, _rows];
+            init();
         }
 
         public GameBoard(int columns, int rows)
         {
             _columns = columns;
             _rows = rows;
-            board = new String[_columns, _rows];
+            init();
         }
 
         public void init()
         {
+            board = new String[_columns, _rows];
+
             for (int y = 0; y < _rows; ++y)
             {
                 for (int x = 0; x < _columns; ++x)
@@ -65,19 +67,15 @@ namespace Game_Elements
             return fullRow.ToString();
         }
 
-        public string getDiagnal(int x, int y)
+        public string getDiagnal(int x, int y, Func<int, int> Xdel, Func<int, int> Ydel)
         {
             StringBuilder fullRow = new StringBuilder();
-            //SE
             for(int i = 0; i < 4; ++i)
             {
-                fullRow.Append(board[x++, y++]);
+                fullRow.Append(board[x, y]);
+                x = Xdel(x);
+                y = Ydel(y);
             }
-
-            //for (int y = 0; y < _rows; ++y)
-            //{
-            //    fullRow.Append(board[x, y]);
-            //}
             return fullRow.ToString();
         }
 
@@ -89,6 +87,8 @@ namespace Game_Elements
             return true;
 
         }
+
+
 
 
         private int _columns;

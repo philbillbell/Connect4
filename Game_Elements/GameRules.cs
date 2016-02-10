@@ -10,8 +10,9 @@ namespace Game_Elements
     {
         public GameRules()
         {
-
+            
         }   
+
 
         private bool check_Horizontal_win(GameBoard board)
         {
@@ -44,13 +45,40 @@ namespace Game_Elements
         private bool check_Diagnal_win(GameBoard board)
         {
             string current_colum = "";
-            //for (int y = 0; y < board.columns; y++)
-            //{
-                current_colum = board.getDiagnal(0,0);
-                if (current_colum.Contains("hhhh"))
-                    return true;
+            for (int y = 0; y < board.columns; y++)
+            {
+                for (int x = 0; x < board.rows; x++)
+                {
+                    if (x < 4 && y < 3)
+                    {//South east possible
+                        current_colum = board.getDiagnal(x, y, (Coord) => { return ++Coord; }, (Coord) => { return ++Coord; });
+                        if (current_colum.Contains("hhhh"))
+                            return true;
+                    }
 
-            //}
+                    if (x < 4 && y > 2)
+                    {//North East possible
+                        current_colum = board.getDiagnal(x, y, (Coord) => { return ++Coord; }, (Coord) => { return --Coord; });
+                        if (current_colum.Contains("hhhh"))
+                            return true;
+                    }
+
+                    if (x > 2 && y < 3)
+                    {//South west possible
+                        current_colum = board.getDiagnal(x, y, (Coord) => { return --Coord; }, (Coord) => { return ++Coord; });
+                        if (current_colum.Contains("hhhh"))
+                            return true;
+                    }
+
+                    if (x > 2 && y > 2)
+                    {//North west possible
+                        current_colum = board.getDiagnal(x, y, (Coord) => { return --Coord; }, (Coord) => { return --Coord; });
+                        if (current_colum.Contains("hhhh"))
+                            return true;
+                    }
+                }
+            }
+
 
             return false;
         }
@@ -71,7 +99,7 @@ namespace Game_Elements
         }
 
         private int total_connect;
-        
+
 
     }
 }
