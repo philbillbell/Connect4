@@ -23,6 +23,14 @@ namespace Connect4_Test
             }
         }
 
+        void create_diagnal_win(ref GameBoard board, int startX, int startY)
+        {
+            for (int x = 0; x < 4; ++x)
+            {
+                board.insert(startX++, startY++, "h");
+            }
+        }
+
         [TestMethod]
         public void check_for_all_horizontal_win()
         {
@@ -58,6 +66,25 @@ namespace Connect4_Test
                     board.init();
                 }
             }
+        }
+
+        [TestMethod]
+        public void check_for_all_diagnal_win()
+        {
+            GameRules rules = new GameRules();
+            GameBoard board = new GameBoard();
+            board.init();
+
+            //for (int x = 0; x < board.columns; ++x)
+            //{
+            //    for (int y = 0; y < 3; ++y)
+            //    {
+                    create_diagnal_win(ref board, 0, 0);
+                    bool test = rules.check_for_win(board);
+                    Assert.AreEqual(test, true);
+                    board.init();
+            //    }
+            //}
         }
     }
 }

@@ -41,12 +41,30 @@ namespace Game_Elements
             return false;
         }
 
+        private bool check_Diagnal_win(GameBoard board)
+        {
+            string current_colum = "";
+            //for (int y = 0; y < board.columns; y++)
+            //{
+                current_colum = board.getDiagnal(0,0);
+                if (current_colum.Contains("hhhh"))
+                    return true;
+
+            //}
+
+            return false;
+        }
+
+        
         public bool check_for_win(GameBoard board)
         {
             if (check_Horizontal_win(board))
                 return true;
 
             if (check_Vertical_win(board))
+                return true;
+
+            if (check_Diagnal_win(board))
                 return true;
 
             return false;

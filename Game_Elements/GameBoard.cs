@@ -65,7 +65,23 @@ namespace Game_Elements
             return fullRow.ToString();
         }
 
-        
+        public string getDiagnal(int x, int y)
+        {
+            StringBuilder fullRow = new StringBuilder();
+            //SE
+            for(int i = 0; i < 4; ++i)
+            {
+                fullRow.Append(board[x++, y++]);
+            }
+
+            //for (int y = 0; y < _rows; ++y)
+            //{
+            //    fullRow.Append(board[x, y]);
+            //}
+            return fullRow.ToString();
+        }
+
+
 
         public bool insert(int x, int y, string dobber)
         {
