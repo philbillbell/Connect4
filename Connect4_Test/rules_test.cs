@@ -15,6 +15,14 @@ namespace Connect4_Test
             }
         }
 
+        void create_vertical_win(ref GameBoard board, int startX, int startY)
+        {
+            for (int x = 0; x < 4; ++x)
+            {
+                board.insert(startX, startY++, "h");
+            }
+        }
+
         [TestMethod]
         public void check_for_all_horizontal_win()
         {
@@ -22,7 +30,7 @@ namespace Connect4_Test
             GameBoard board = new GameBoard();
             board.init();
 
-            for (int y = 0; y < 6; ++y)
+            for (int y = 0; y < board.rows; ++y)
             {
                 for (int x = 0; x < 4; ++x)
                 {
@@ -31,7 +39,24 @@ namespace Connect4_Test
                     board.init();
                 }
             }
-            
+        }
+
+        [TestMethod]
+        public void check_for_all_vertical_win()
+        {
+            GameRules rules = new GameRules();
+            GameBoard board = new GameBoard();
+            board.init();
+
+            for (int x = 0; x < board.columns; ++x)
+            {
+                for (int y = 0; y < 3; ++y)
+                {
+                    create_hotizontal_win(ref board, x, y);
+                    Assert.AreEqual(rules.check_for_win(board), true);
+                    board.init();
+                }
+            }
         }
     }
 }
