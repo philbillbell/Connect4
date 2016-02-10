@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9D0F8CBD-01AC-4EFD-BB56-149BD1764006}</ProjectGuid>
+    <ProjectGuid>{590895A7-4186-4EFD-AEEA-BA270DAD27F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Game_Rules</RootNamespace>
-    <AssemblyName>Game_Rules</AssemblyName>
+    <RootNamespace>Game_Elements</RootNamespace>
+    <AssemblyName>Game_Elements</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

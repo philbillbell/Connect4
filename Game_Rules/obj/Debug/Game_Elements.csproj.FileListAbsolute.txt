@@ -1,4 +1,0 @@
-H:\Development\Connect4\Game_Rules\bin\Debug\Game_Rules.dll
-H:\Development\Connect4\Game_Rules\bin\Debug\Game_Rules.pdb
-H:\Development\Connect4\Game_Rules\obj\Debug\Game_Rules.dll
-H:\Development\Connect4\Game_Rules\obj\Debug\Game_Rules.pdb

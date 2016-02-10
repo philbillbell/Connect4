@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect4", "Connect4\Connec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect4_Test", "Connect4_Test\Connect4_Test.csproj", "{47491679-6E3D-48A3-A608-031B5BEF59E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game_Elements", "Game_Rules\Game_Elements.csproj", "{9D0F8CBD-01AC-4EFD-BB56-149BD1764006}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game_Elements", "Game_Elements\Game_Elements.csproj", "{590895A7-4186-4EFD-AEEA-BA270DAD27F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{47491679-6E3D-48A3-A608-031B5BEF59E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47491679-6E3D-48A3-A608-031B5BEF59E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47491679-6E3D-48A3-A608-031B5BEF59E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9D0F8CBD-01AC-4EFD-BB56-149BD1764006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D0F8CBD-01AC-4EFD-BB56-149BD1764006}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D0F8CBD-01AC-4EFD-BB56-149BD1764006}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D0F8CBD-01AC-4EFD-BB56-149BD1764006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{590895A7-4186-4EFD-AEEA-BA270DAD27F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590895A7-4186-4EFD-AEEA-BA270DAD27F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{590895A7-4186-4EFD-AEEA-BA270DAD27F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{590895A7-4186-4EFD-AEEA-BA270DAD27F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

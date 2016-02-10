@@ -54,8 +54,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Game_Rules\Game_Elements.csproj">
-      <Project>{9d0f8cbd-01ac-4efd-bb56-149bd1764006}</Project>
+    <ProjectReference Include="..\Game_Elements\Game_Elements.csproj">
+      <Project>{590895a7-4186-4efd-aeea-ba270dad27f7}</Project>
       <Name>Game_Elements</Name>
     </ProjectReference>
   </ItemGroup>

@@ -5,5 +5,5 @@ H:\Development\Connect4\Connect4_Test\bin\Debug\Microsoft.VisualStudio.QualityTo
 H:\Development\Connect4\Connect4_Test\obj\Debug\Connect4_Test.csprojResolveAssemblyReference.cache
 H:\Development\Connect4\Connect4_Test\obj\Debug\Connect4_Test.dll
 H:\Development\Connect4\Connect4_Test\obj\Debug\Connect4_Test.pdb
-H:\Development\Connect4\Connect4_Test\bin\Debug\Game_Rules.dll
-H:\Development\Connect4\Connect4_Test\bin\Debug\Game_Rules.pdb
+H:\Development\Connect4\Connect4_Test\bin\Debug\Game_Elements.dll
+H:\Development\Connect4\Connect4_Test\bin\Debug\Game_Elements.pdb
