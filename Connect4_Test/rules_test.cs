@@ -7,19 +7,21 @@ namespace Connect4_Test
     [TestClass]
     public class rules_test
     {
-
-        private String[,] board;
-        private int rows;
-        private int cols;
+        void create_hotizontal_win(ref String[,] board, int startX, int startY)
+        {
+            for (int x = startX; x < 4; ++x)
+            {
+                board[startY,x] = "h";
+            }
+        }
 
         [TestMethod]
         public void check_for_horizontal_win()
         {
-            rows = 6;
-            cols = 7;
-
-            board = new String[rows, cols];
-
+            int rows= 6;
+            int cols = 7;
+            String[,] board = new String[rows, cols];
+            create_hotizontal_win(ref board, 0, 0);
             GameRules rules = new GameRules();
             Assert.AreEqual(rules.check_for_win(board), true);
 
