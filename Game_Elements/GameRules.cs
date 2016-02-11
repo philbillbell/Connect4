@@ -21,13 +21,10 @@ namespace Game_Elements
 
         private bool check_Horizontal_win(GameBoard board)
         {
-            string current_row = "";
             for (int y = 0; y < board.rows; y++)
             {
-                current_row = board.getRow(y);
-                if (check_win(current_row))
+                if (check_win(board.getRow(y)))
                     return true;
-
             }
 
             return false;
@@ -35,11 +32,9 @@ namespace Game_Elements
 
         private bool check_Vertical_win(GameBoard board)
         {
-            string current_colum = "";
-            for (int y = 0; y < board.columns; y++)
+            for (int x = 0; x < board.columns; x++)
             {
-                current_colum = board.getColumn(y);
-                if (check_win(current_colum))
+                if (check_win(board.getColumn(x)))
                     return true;
             }
             return false;
@@ -79,15 +74,9 @@ namespace Game_Elements
         
         public bool check_for_win(GameBoard board)
         {
-            if (check_Horizontal_win(board))
+            if (check_Horizontal_win(board) || check_Vertical_win(board) || check_Diagnal_win(board))
                 return true;
-
-            if (check_Vertical_win(board))
-                return true;
-
-            if (check_Diagnal_win(board))
-                return true;
-
+            
             return false;
         }
 
