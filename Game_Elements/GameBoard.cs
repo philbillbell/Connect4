@@ -85,13 +85,13 @@ namespace Game_Elements
             return true;
         }
 
-        public bool dropDobber(int x)
+        public bool dropDobber(int x, string player)
         {
             for(int y = _rows -1; y >=0 ; --y)
             {
                 if (board[x, y].Equals(" "))
                 {
-                    insert(x, y, "h");
+                    insert(x, y, player);
                     return true;
                 }
             }
