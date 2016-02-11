@@ -14,13 +14,18 @@ namespace Game_Elements
         }   
 
 
+        private bool check_win(string row)
+        {
+            return (row.Contains(human_win) || row.Contains(computer_win));
+        }
+
         private bool check_Horizontal_win(GameBoard board)
         {
             string current_row = "";
             for (int y = 0; y < board.rows; y++)
             {
                 current_row = board.getRow(y);
-                if (current_row.Contains("hhhh"))
+                if (check_win(current_row))
                     return true;
 
             }
@@ -34,7 +39,7 @@ namespace Game_Elements
             for (int y = 0; y < board.columns; y++)
             {
                 current_colum = board.getColumn(y);
-                if (current_colum.Contains("hhhh"))
+                if (check_win(current_colum))
                     return true;
             }
             return false;
@@ -42,8 +47,8 @@ namespace Game_Elements
 
         private bool check_diagnal(GameBoard board, int x, int y, Func<int, int> Xdel, Func<int, int> Ydel)
         {
-            string current_colum = board.getDiagnal(x, y, Xdel, Ydel);
-            if (current_colum.Contains("hhhh"))
+            string current_diag = board.getDiagnal(x, y, Xdel, Ydel);
+            if (check_win(current_diag))
                 return true;
 
             return false;
@@ -83,10 +88,10 @@ namespace Game_Elements
             if (check_Diagnal_win(board))
                 return true;
 
-
-
-
             return false;
         }
+
+        private const string computer_win = "cccc";
+        private const string human_win = "hhhh";
     }
 }

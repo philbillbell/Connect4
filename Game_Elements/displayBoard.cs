@@ -10,7 +10,13 @@ namespace Game_Elements
     {
         public DisplayBoard()
         {
+            _message = "";
+        }
 
+        public string message
+        {
+            get { return _message; }
+            set { _message = value; }
         }
 
         public void show_board(GameBoard board)
@@ -36,7 +42,13 @@ namespace Game_Elements
                 Console.WriteLine("");
             }
             Console.WriteLine("-----------------------------");
+            Console.WriteLine(_message);
+
+            if (!string.IsNullOrEmpty(_message))
+                _message = "";
         }
+
+        private string _message;
 
     }
 }

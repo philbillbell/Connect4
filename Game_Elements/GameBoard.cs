@@ -22,7 +22,7 @@ namespace Game_Elements
         {
             _columns = columns;
             _rows = rows;
-            size = (_columns - 1) * (_rows - 1);
+            size = (_columns) * (_rows);
         }
 
         public void init()
@@ -94,17 +94,33 @@ namespace Game_Elements
             return true;
         }
 
+        public bool validate_input(int x)
+        {
+            return (x < _columns) ? true : false;
+        }
+
         public bool dropDobber(int x, string player)
         {
-            for(int y = _rows -1; y >=0 ; --y)
+            try
             {
-                if (board[x, y].Equals(" "))
+                if (!validate_input(x))
+                    return false;
+
+                for (int y = _rows - 1; y >= 0; --y)
                 {
-                    insert(x, y, player);
-                    current_count++;
-                    return true;
+                    if (board[x, y].Equals(" "))
+                    {
+                        insert(x, y, player);
+                        current_count++;
+                        return true;
+                    }
                 }
             }
+            catch
+            {
+                
+            }
+
             return false;
         }
 

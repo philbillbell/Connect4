@@ -11,40 +11,10 @@ namespace Connect4
     {
         static void Main(string[] args)
         {
-            GameRules rules = new GameRules();
-            GameBoard gameboard = new GameBoard();
-            DisplayBoard displayboard = new DisplayBoard();
 
-            gameboard.init();
+            GamePlay gameplay = new GamePlay();
 
-            gameboard.dropDobber(0, "h");
-            displayboard.show_board(gameboard);
-            if (rules.check_for_win(gameboard))
-                Console.WriteLine("Winner Winner Chicken Dinner");
-            Console.ReadKey();
-
-            gameboard.dropDobber(0, "c");
-            displayboard.show_board(gameboard);
-            if (rules.check_for_win(gameboard))
-                Console.WriteLine("Winner Winner Chicken Dinner");
-            Console.ReadKey();
-
-            gameboard.dropDobber(0, "h");
-            displayboard.show_board(gameboard);
-            if (rules.check_for_win(gameboard))
-                Console.WriteLine("Winner Winner Chicken Dinner");
-            Console.ReadKey();
-
-            gameboard.dropDobber(0, "h");
-            displayboard.show_board(gameboard);
-            if (rules.check_for_win(gameboard))
-                Console.WriteLine("Winner Winner Chicken Dinner");
-
-            Console.ReadKey();
-
-
-
-
+            gameplay.main_game_play();
 
         }
     }

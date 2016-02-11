@@ -47,5 +47,59 @@ namespace Connect4_Test
             Assert.AreEqual(board.dropDobber(0, "h"), true);
             Assert.AreEqual(rules.check_for_win(board), true);
         }
+
+        [TestMethod]
+        public void play_drops_a_dobber_in_pos_outside_maxtrix()
+        {
+            GameRules rules = new GameRules();
+            GameBoard board = new GameBoard();
+            board.init();
+
+            Assert.AreEqual(board.dropDobber(22, "h"), false);
+        }
+
+        [TestMethod]
+        public void check_for_full_board()
+        {
+            GameRules rules = new GameRules();
+            GameBoard board = new GameBoard();
+            board.init();
+            int i = 0;
+
+            for (i = 0; i < 6; i++)
+                board.dropDobber(0, "h");
+
+            Assert.AreEqual(board.isBoardFull(), false);
+
+            for (i = 0; i < 6; i++)
+                board.dropDobber(1, "h");
+
+            Assert.AreEqual(board.isBoardFull(), false);
+
+            for (i = 0; i < 6; i++)
+                board.dropDobber(2, "h");
+
+            Assert.AreEqual(board.isBoardFull(), false);
+
+            for (i = 0; i < 6; i++)
+                board.dropDobber(3, "h");
+
+            Assert.AreEqual(board.isBoardFull(), false);
+
+            for (i = 0; i < 6; i++)
+                board.dropDobber(4, "h");
+
+            Assert.AreEqual(board.isBoardFull(), false);
+
+            for (i = 0; i < 6; i++)
+                board.dropDobber(5, "h");
+
+            Assert.AreEqual(board.isBoardFull(), false);
+
+            for (i = 0; i < 6; i++)
+                board.dropDobber(6, "h");
+
+            Assert.AreEqual(board.isBoardFull(), true);
+        }
     }
 }
