@@ -57,6 +57,11 @@ namespace Game_Elements
             return fullRow.ToString();
         }
 
+        public string getCell(int x, int y)
+        {
+            return board[x, y].ToString();
+        }
+
         public string getColumn(int x)
         {
             StringBuilder fullRow = new StringBuilder();

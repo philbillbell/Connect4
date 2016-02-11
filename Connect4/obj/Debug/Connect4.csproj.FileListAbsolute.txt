@@ -4,3 +4,5 @@ H:\Development\Connect4\Connect4\bin\Debug\Connect4.exe
 H:\Development\Connect4\Connect4\bin\Debug\Connect4.pdb
 H:\Development\Connect4\Connect4\obj\Debug\Connect4.exe
 H:\Development\Connect4\Connect4\obj\Debug\Connect4.pdb
+H:\Development\Connect4\Connect4\bin\Debug\Game_Elements.dll
+H:\Development\Connect4\Connect4\bin\Debug\Game_Elements.pdb
