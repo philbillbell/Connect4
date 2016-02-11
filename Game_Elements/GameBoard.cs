@@ -10,21 +10,25 @@ namespace Game_Elements
     {
         public GameBoard()
         {
-            _columns = 7;
-            _rows = 6;
-            init();
+            SetUpBoad(7, 6);
         }
 
         public GameBoard(int columns, int rows)
         {
+            SetUpBoad(columns, rows);
+        }
+
+        private void SetUpBoad(int columns, int rows)
+        {
             _columns = columns;
             _rows = rows;
-            init();
+            size = (_columns - 1) * (_rows - 1);
         }
 
         public void init()
         {
             board = new String[_columns, _rows];
+            current_count = 0;
 
             for (int y = 0; y < _rows; ++y)
             {
@@ -97,14 +101,22 @@ namespace Game_Elements
                 if (board[x, y].Equals(" "))
                 {
                     insert(x, y, player);
+                    current_count++;
                     return true;
                 }
             }
             return false;
         }
 
+        public bool isBoardFull()
+        {
+            return (size == current_count);
+        }
+
         private int _columns;
         private int _rows;
         private String[,] board;
+        private int size;
+        private int current_count;
     }
 }

@@ -18,6 +18,7 @@ namespace Game_Elements
             Console.Clear();
             string cell_contents = "";
 
+            Console.WriteLine("  1   2   3   4   5   6   7");
             for (int y = 0; y < board.rows; y++)
             {
                 Console.WriteLine("-----------------------------");
