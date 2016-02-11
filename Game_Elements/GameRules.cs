@@ -42,44 +42,46 @@ namespace Game_Elements
             return false;
         }
 
+        private bool check_diagnal(GameBoard board, int x, int y, Func<int, int> Xdel, Func<int, int> Ydel)
+        {
+            string current_colum = board.getDiagnal(x, y, Xdel, Ydel);
+            if (current_colum.Contains("hhhh"))
+                return true;
+
+            return false;
+        }
+
         private bool check_Diagnal_win(GameBoard board)
         {
-            string current_colum = "";
             for (int y = 0; y < board.columns; y++)
             {
                 for (int x = 0; x < board.rows; x++)
                 {
                     if (x < 4 && y < 3)
                     {//South east possible
-                        current_colum = board.getDiagnal(x, y, (Coord) => { return ++Coord; }, (Coord) => { return ++Coord; });
-                        if (current_colum.Contains("hhhh"))
+                        if (check_diagnal(board, x, y, (Coord) => { return ++Coord; }, (Coord) => { return ++Coord; }))
                             return true;
                     }
 
                     if (x < 4 && y > 2)
                     {//North East possible
-                        current_colum = board.getDiagnal(x, y, (Coord) => { return ++Coord; }, (Coord) => { return --Coord; });
-                        if (current_colum.Contains("hhhh"))
+                        if (check_diagnal(board, x, y, (Coord) => { return ++Coord; }, (Coord) => { return --Coord; }))
                             return true;
                     }
 
                     if (x > 2 && y < 3)
                     {//South west possible
-                        current_colum = board.getDiagnal(x, y, (Coord) => { return --Coord; }, (Coord) => { return ++Coord; });
-                        if (current_colum.Contains("hhhh"))
+                        if (check_diagnal(board, x, y, (Coord) => { return --Coord; }, (Coord) => { return ++Coord; }))
                             return true;
                     }
 
                     if (x > 2 && y > 2)
                     {//North west possible
-                        current_colum = board.getDiagnal(x, y, (Coord) => { return --Coord; }, (Coord) => { return --Coord; });
-                        if (current_colum.Contains("hhhh"))
+                        if (check_diagnal(board, x, y, (Coord) => { return --Coord; }, (Coord) => { return --Coord; }))
                             return true;
                     }
                 }
             }
-
-
             return false;
         }
 
