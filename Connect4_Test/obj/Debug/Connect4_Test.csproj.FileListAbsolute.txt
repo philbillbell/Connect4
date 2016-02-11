@@ -1,7 +1,5 @@
 H:\Development\Connect4\Connect4_Test\bin\Debug\Connect4_Test.dll
 H:\Development\Connect4\Connect4_Test\bin\Debug\Connect4_Test.pdb
-H:\Development\Connect4\Connect4_Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-H:\Development\Connect4\Connect4_Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 H:\Development\Connect4\Connect4_Test\obj\Debug\Connect4_Test.csprojResolveAssemblyReference.cache
 H:\Development\Connect4\Connect4_Test\obj\Debug\Connect4_Test.dll
 H:\Development\Connect4\Connect4_Test\obj\Debug\Connect4_Test.pdb

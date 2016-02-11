@@ -79,17 +79,24 @@ namespace Game_Elements
             return fullRow.ToString();
         }
 
-
-
         public bool insert(int x, int y, string dobber)
         {
             board[x, y] = dobber;
             return true;
-
         }
 
-
-
+        public bool dropDobber(int x)
+        {
+            for(int y = _rows -1; y >=0 ; --y)
+            {
+                if (board[x, y].Equals(" "))
+                {
+                    insert(x, y, "h");
+                    return true;
+                }
+            }
+            return false;
+        }
 
         private int _columns;
         private int _rows;

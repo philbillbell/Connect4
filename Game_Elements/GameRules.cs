@@ -36,9 +36,7 @@ namespace Game_Elements
                 current_colum = board.getColumn(y);
                 if (current_colum.Contains("hhhh"))
                     return true;
-
             }
-
             return false;
         }
 
