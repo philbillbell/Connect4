@@ -15,30 +15,38 @@ namespace Game_Elements
             displayboard = new DisplayBoard();
         }
 
-        private bool human_go()
+        private bool get_position_from_user(ref int location)
         {
             string answer = "";
+            displayboard.show_board(gameboard);
+            Console.Write("Please enter the column you would like to drop a dobber in: ");
+            answer = Console.ReadLine();
+
+            if (!Int32.TryParse(answer, out location))
+                displayboard.message = "Error with what you enterd: 1-7 please";
+            else
+                return true;
+
+            return false;
+        }
+
+        private bool human_go()
+        {
             int pos = -1;
             bool flag = false;
 
             do
             {
-                displayboard.show_board(gameboard);
-                Console.Write("Please enter the column you would like to drop a dobber in: ");
-                answer = Console.ReadLine();
-                if (!Int32.TryParse(answer, out pos))
-                    displayboard.message = "Error with what you enterd: 1-7 please";
-                else
-                    flag = true;
-
-                if (!gameboard.dropDobber(pos - 1, "h"))
+                flag = get_position_from_user(ref pos);
+                if (flag)
                 {
-                    displayboard.message = "Error with column, please select a new column";
-                    flag = false;
+                    if (!gameboard.dropDobber(pos - 1, "h"))
+                    {
+                        displayboard.message = "Error with column, please select a new column";
+                        flag = false;
+                    }
                 }
-
             } while (!flag);
-
             return true;
         }
 
