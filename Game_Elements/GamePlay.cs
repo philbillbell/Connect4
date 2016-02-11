@@ -64,8 +64,6 @@ namespace Game_Elements
             }
         }
 
-
-
         public bool game_play()
         {
             bool continue_game = true;
@@ -96,7 +94,6 @@ namespace Game_Elements
                     Console.WriteLine("Draw");
                     return false;
                 }
-
             }
             return false;
         }

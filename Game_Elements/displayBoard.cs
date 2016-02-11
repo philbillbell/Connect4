@@ -49,6 +49,5 @@ namespace Game_Elements
         }
 
         private string _message;
-
     }
 }
