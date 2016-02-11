@@ -53,31 +53,19 @@ namespace Game_Elements
 
         private bool check_Diagnal_win(GameBoard board)
         {
-            for (int y = 0; y < board.columns; y++)
+            for (int y = 0; y < board.rows; y++)
             {
-                for (int x = 0; x < board.rows; x++)
+                for (int x = 0; x < board.columns; x++)
                 {
                     if (x < 4 && y < 3)
-                    {//South east possible
+                    {//South east / north west possible
                         if (check_diagnal(board, x, y, (Coord) => { return ++Coord; }, (Coord) => { return ++Coord; }))
                             return true;
                     }
 
-                    if (x < 4 && y > 2)
-                    {//North East possible
-                        if (check_diagnal(board, x, y, (Coord) => { return ++Coord; }, (Coord) => { return --Coord; }))
-                            return true;
-                    }
-
                     if (x > 2 && y < 3)
-                    {//South west possible
+                    {//South west / north east possible
                         if (check_diagnal(board, x, y, (Coord) => { return --Coord; }, (Coord) => { return ++Coord; }))
-                            return true;
-                    }
-
-                    if (x > 2 && y > 2)
-                    {//North west possible
-                        if (check_diagnal(board, x, y, (Coord) => { return --Coord; }, (Coord) => { return --Coord; }))
                             return true;
                     }
                 }
@@ -99,9 +87,5 @@ namespace Game_Elements
 
             return false;
         }
-
-        private int total_connect;
-
-
     }
 }
