@@ -24,32 +24,56 @@ namespace Game_Elements
             dobber_win = sb.ToString();
         }
 
+        private void write_with_colour(string message)
+        {
+            if (!string.IsNullOrEmpty(message))
+            {
+                string[] array = message.Split('%');
+
+                if (array.Length > 2)
+                {
+                    Console.Write(array[0]);
+                    Console.BackgroundColor = (index == 1) ? ConsoleColor.Blue : ConsoleColor.Red;
+                    Console.Write(array[1]);
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.Write(array[2]);
+                }
+                else
+                    Console.Write(message);
+            }
+        }
+
+        private bool is_human_comp(string answer)
+        {
+            if (answer.ToUpper().Equals("H"))
+            {
+                human = true;
+                return true;
+            }
+            else if (answer.ToUpper().Equals("C"))
+            {
+                human = false;
+                return true;
+            }
+            return false;
+        }
+
         public void pick_player()
         {
             bool flag = false;
             string answer = "";
             
-            string question = "Player " + index.ToString() + ", human or computer { h / c}: ";
+            string question = "Player %" + index.ToString() + "%, human or computer { h / c}: ";
             do
             {
                 Console.Clear();
-                Console.Write(question);
-                Console.BackgroundColor = (index == 1) ? ConsoleColor.Blue : ConsoleColor.Red;
+                write_with_colour(question);
                 answer = Console.ReadLine();
-                Console.BackgroundColor = ConsoleColor.Black;
 
-                if (answer.ToUpper().Equals("H"))
-                {
-                    human = true;
-                    flag = true;
-                }
-                else if (answer.ToUpper().Equals("C"))
-                {
-                    human = false;
-                    flag = true;
-                }
-                else
-                    question = "Error: Player " + index.ToString() + ", human or computer { h / c}: "; 
+                flag = is_human_comp(answer);
+                
+                if(!flag)
+                    question = "Error: Player %" + index.ToString() + "%, human or computer { h / c}: "; 
 
             } while (!flag);
             
@@ -58,7 +82,7 @@ namespace Game_Elements
         private bool get_position_from_user(ref int location)
         {
             string answer = "";
-            Console.Write("Player: " + index.ToString() + " Please enter the column you would like to drop a dobber in: ");
+            write_with_colour("Player: %" + index.ToString() + "% Please enter the column you would like to drop a dobber in: ");
             answer = Console.ReadLine();
 
             if (!Int32.TryParse(answer, out location))

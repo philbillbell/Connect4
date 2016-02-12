@@ -75,7 +75,6 @@ namespace Game_Elements
         public void main_game_play()
         {
             bool play_again = true;
-            
 
             create_players();
 
