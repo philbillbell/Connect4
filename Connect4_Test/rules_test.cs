@@ -11,7 +11,7 @@ namespace Connect4_Test
         {
             for (int x = 0; x < 4; ++x)
             {
-                board.insert(startX++, startY, "h");
+                board.insert(startX++, startY, "hhhh");
             }
         }
 
@@ -19,7 +19,7 @@ namespace Connect4_Test
         {
             for (int x = 0; x < 4; ++x)
             {
-                board.insert(startX, startY++, "h");
+                board.insert(startX, startY++, "hhhh");
             }
         }
 
@@ -27,7 +27,7 @@ namespace Connect4_Test
         {
             for (int x = 0; x < 4; ++x)
             {
-                board.insert(startX, startY, "h");
+                board.insert(startX, startY, "hhhh");
                 startX = Xdel(startX);
                 startY = Ydel(startY);
             }
@@ -45,7 +45,7 @@ namespace Connect4_Test
                 for (int x = 0; x < 4; ++x)
                 {
                     create_hotizontal_win(ref board, x, y);
-                    Assert.AreEqual(rules.check_for_win(board), true);
+                    Assert.AreEqual(rules.check_for_win(board, "hhhh"), true);
                     board.init();
                 }
             }
@@ -63,7 +63,7 @@ namespace Connect4_Test
                 for (int y = 0; y < 3; ++y)
                 {
                     create_vertical_win(ref board, x, y);
-                    Assert.AreEqual(rules.check_for_win(board), true);
+                    Assert.AreEqual(rules.check_for_win(board, "hhhh"), true);
                     board.init();
                 }
             }
@@ -78,7 +78,7 @@ namespace Connect4_Test
 
             create_diagnal_win(ref board, 0, 0, (Coord) => { return ++Coord; }, (Coord) => { return ++Coord; });
             //create_diagnal_win(ref board, 0, 5);
-            Assert.AreEqual(rules.check_for_win(board), true);
+            Assert.AreEqual(rules.check_for_win(board, "hhhh"), true);
         }
 
         [TestMethod]
@@ -89,7 +89,7 @@ namespace Connect4_Test
             board.init();
 
             create_diagnal_win(ref board, 0, 5, (Coord) => { return ++Coord; }, (Coord) => { return --Coord; });
-            Assert.AreEqual(rules.check_for_win(board), true);
+            Assert.AreEqual(rules.check_for_win(board, "hhhh"), true);
         }
 
         [TestMethod]
@@ -100,7 +100,7 @@ namespace Connect4_Test
             board.init();
 
             create_diagnal_win(ref board, 6, 0, (Coord) => { return --Coord; }, (Coord) => { return ++Coord; });
-            Assert.AreEqual(rules.check_for_win(board), true);
+            Assert.AreEqual(rules.check_for_win(board, "hhhh"), true);
         }
 
         [TestMethod]
@@ -111,7 +111,7 @@ namespace Connect4_Test
             board.init();
 
             create_diagnal_win(ref board, 6, 5, (Coord) => { return --Coord; }, (Coord) => { return --Coord; });
-            Assert.AreEqual(rules.check_for_win(board), true);
+            Assert.AreEqual(rules.check_for_win(board, "hhhh"), true);
         }
     }
 }

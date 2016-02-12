@@ -39,13 +39,13 @@ namespace Connect4_Test
             board.init();
 
             Assert.AreEqual(board.drop_dobber(0, "h"), true);
-            Assert.AreEqual(rules.check_for_win(board), false);
+            Assert.AreEqual(rules.check_for_win(board, "hhhh"), false);
             Assert.AreEqual(board.drop_dobber(0, "h"), true);
-            Assert.AreEqual(rules.check_for_win(board), false);
+            Assert.AreEqual(rules.check_for_win(board, "hhhh"), false);
             Assert.AreEqual(board.drop_dobber(0, "h"), true);
-            Assert.AreEqual(rules.check_for_win(board), false);
+            Assert.AreEqual(rules.check_for_win(board, "hhhh"), false);
             Assert.AreEqual(board.drop_dobber(0, "h"), true);
-            Assert.AreEqual(rules.check_for_win(board), true);
+            Assert.AreEqual(rules.check_for_win(board, "hhhh"), true);
         }
 
         [TestMethod]
