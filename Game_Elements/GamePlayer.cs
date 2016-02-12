@@ -28,12 +28,16 @@ namespace Game_Elements
         {
             bool flag = false;
             string answer = "";
+            
             string question = "Player " + index.ToString() + ", human or computer { h / c}: ";
             do
             {
                 Console.Clear();
                 Console.Write(question);
+                Console.BackgroundColor = (index == 1) ? ConsoleColor.Blue : ConsoleColor.Red;
                 answer = Console.ReadLine();
+                Console.BackgroundColor = ConsoleColor.Black;
+
                 if (answer.ToUpper().Equals("H"))
                 {
                     human = true;

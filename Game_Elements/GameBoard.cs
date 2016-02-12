@@ -99,6 +99,20 @@ namespace Game_Elements
             return (x < _columns) ? true : false;
         }
 
+        private bool place_dobber_in_column(int x, string player)
+        {
+            for (int y = _rows - 1; y >= 0; --y)
+            {
+                if (board[x, y].Equals(" "))
+                {
+                    insert(x, y, player);
+                    current_count++;
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public bool drop_dobber(int x, string player)
         {
             try
@@ -106,15 +120,7 @@ namespace Game_Elements
                 if (!validate_input(x))
                     return false;
 
-                for (int y = _rows - 1; y >= 0; --y)
-                {
-                    if (board[x, y].Equals(" "))
-                    {
-                        insert(x, y, player);
-                        current_count++;
-                        return true;
-                    }
-                }
+                return place_dobber_in_column(x, player);
             }
             catch
             {
