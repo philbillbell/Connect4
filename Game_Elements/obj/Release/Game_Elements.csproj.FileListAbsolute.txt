@@ -1,0 +1,4 @@
+H:\Development\Connect4\Game_Elements\bin\Release\Game_Elements.dll
+H:\Development\Connect4\Game_Elements\bin\Release\Game_Elements.pdb
+H:\Development\Connect4\Game_Elements\obj\Release\Game_Elements.dll
+H:\Development\Connect4\Game_Elements\obj\Release\Game_Elements.pdb

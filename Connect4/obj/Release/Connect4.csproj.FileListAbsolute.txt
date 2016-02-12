@@ -1,0 +1,8 @@
+H:\Development\Connect4\Connect4\bin\Release\Connect4.exe.config
+H:\Development\Connect4\Connect4\bin\Release\Connect4.exe
+H:\Development\Connect4\Connect4\bin\Release\Connect4.pdb
+H:\Development\Connect4\Connect4\bin\Release\Game_Elements.dll
+H:\Development\Connect4\Connect4\bin\Release\Game_Elements.pdb
+H:\Development\Connect4\Connect4\obj\Release\Connect4.csprojResolveAssemblyReference.cache
+H:\Development\Connect4\Connect4\obj\Release\Connect4.exe
+H:\Development\Connect4\Connect4\obj\Release\Connect4.pdb
