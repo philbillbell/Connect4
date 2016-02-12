@@ -11,13 +11,13 @@ namespace Game_Elements
         public GamePlayer(int index)
         {
             this.index = index;
-            create_dobber_win();
+            create_dobber_win(4);
         }
 
-        private void create_dobber_win()
+        private void create_dobber_win(int size)
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i<4; ++i)
+            for (int i = 0; i< size; ++i)
             {
                 sb.Append(index.ToString());
             }

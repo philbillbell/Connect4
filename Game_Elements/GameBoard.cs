@@ -79,7 +79,8 @@ namespace Game_Elements
         public string get_diagnal(int x, int y, Func<int, int> Xdel, Func<int, int> Ydel)
         {
             StringBuilder fullRow = new StringBuilder();
-            for(int i = 0; i < 4; ++i)
+           
+            while(x >= 0 && y >= 0 && x < _columns && y < _rows)
             {
                 fullRow.Append(board[x, y]);
                 x = Xdel(x);
