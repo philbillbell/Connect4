@@ -10,15 +10,15 @@ namespace Game_Elements
     {
         public GameBoard()
         {
-            SetUpBoad(7, 6);
+            Setup_board(7, 6);
         }
 
         public GameBoard(int columns, int rows)
         {
-            SetUpBoad(columns, rows);
+            Setup_board(columns, rows);
         }
 
-        private void SetUpBoad(int columns, int rows)
+        private void Setup_board(int columns, int rows)
         {
             _columns = columns;
             _rows = rows;
@@ -51,7 +51,7 @@ namespace Game_Elements
             //set { _rows = value; }
         }
 
-        public string getRow(int y)
+        public string get_row(int y)
         {
             StringBuilder fullRow = new StringBuilder();
             for (int x = 0; x < _columns; ++x)
@@ -61,12 +61,12 @@ namespace Game_Elements
             return fullRow.ToString();
         }
 
-        public string getCell(int x, int y)
+        public string get_cell(int x, int y)
         {
             return board[x, y].ToString();
         }
 
-        public string getColumn(int x)
+        public string get_column(int x)
         {
             StringBuilder fullRow = new StringBuilder();
             for (int y = 0; y < _rows; ++y)
@@ -76,7 +76,7 @@ namespace Game_Elements
             return fullRow.ToString();
         }
 
-        public string getDiagnal(int x, int y, Func<int, int> Xdel, Func<int, int> Ydel)
+        public string get_diagnal(int x, int y, Func<int, int> Xdel, Func<int, int> Ydel)
         {
             StringBuilder fullRow = new StringBuilder();
             for(int i = 0; i < 4; ++i)
@@ -99,7 +99,7 @@ namespace Game_Elements
             return (x < _columns) ? true : false;
         }
 
-        public bool dropDobber(int x, string player)
+        public bool drop_dobber(int x, string player)
         {
             try
             {
@@ -124,7 +124,7 @@ namespace Game_Elements
             return false;
         }
 
-        public bool isBoardFull()
+        public bool is_board_full()
         {
             return (size == current_count);
         }

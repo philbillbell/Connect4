@@ -13,7 +13,7 @@ namespace Connect4_Test
             GameBoard board = new GameBoard();
             board.init();
 
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
         }
 
         [TestMethod]
@@ -22,13 +22,13 @@ namespace Connect4_Test
             GameBoard board = new GameBoard();
             board.init();
 
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
-            Assert.AreEqual(board.dropDobber(0, "h"), false);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), false);
         }
 
         [TestMethod]
@@ -38,13 +38,13 @@ namespace Connect4_Test
             GameBoard board = new GameBoard();
             board.init();
 
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
             Assert.AreEqual(rules.check_for_win(board), false);
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
             Assert.AreEqual(rules.check_for_win(board), false);
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
             Assert.AreEqual(rules.check_for_win(board), false);
-            Assert.AreEqual(board.dropDobber(0, "h"), true);
+            Assert.AreEqual(board.drop_dobber(0, "h"), true);
             Assert.AreEqual(rules.check_for_win(board), true);
         }
 
@@ -55,7 +55,7 @@ namespace Connect4_Test
             GameBoard board = new GameBoard();
             board.init();
 
-            Assert.AreEqual(board.dropDobber(22, "h"), false);
+            Assert.AreEqual(board.drop_dobber(22, "h"), false);
         }
 
         [TestMethod]
@@ -67,39 +67,39 @@ namespace Connect4_Test
             int i = 0;
 
             for (i = 0; i < 6; i++)
-                board.dropDobber(0, "h");
+                board.drop_dobber(0, "h");
 
-            Assert.AreEqual(board.isBoardFull(), false);
-
-            for (i = 0; i < 6; i++)
-                board.dropDobber(1, "h");
-
-            Assert.AreEqual(board.isBoardFull(), false);
+            Assert.AreEqual(board.is_board_full(), false);
 
             for (i = 0; i < 6; i++)
-                board.dropDobber(2, "h");
+                board.drop_dobber(1, "h");
 
-            Assert.AreEqual(board.isBoardFull(), false);
-
-            for (i = 0; i < 6; i++)
-                board.dropDobber(3, "h");
-
-            Assert.AreEqual(board.isBoardFull(), false);
+            Assert.AreEqual(board.is_board_full(), false);
 
             for (i = 0; i < 6; i++)
-                board.dropDobber(4, "h");
+                board.drop_dobber(2, "h");
 
-            Assert.AreEqual(board.isBoardFull(), false);
-
-            for (i = 0; i < 6; i++)
-                board.dropDobber(5, "h");
-
-            Assert.AreEqual(board.isBoardFull(), false);
+            Assert.AreEqual(board.is_board_full(), false);
 
             for (i = 0; i < 6; i++)
-                board.dropDobber(6, "h");
+                board.drop_dobber(3, "h");
 
-            Assert.AreEqual(board.isBoardFull(), true);
+            Assert.AreEqual(board.is_board_full(), false);
+
+            for (i = 0; i < 6; i++)
+                board.drop_dobber(4, "h");
+
+            Assert.AreEqual(board.is_board_full(), false);
+
+            for (i = 0; i < 6; i++)
+                board.drop_dobber(5, "h");
+
+            Assert.AreEqual(board.is_board_full(), false);
+
+            for (i = 0; i < 6; i++)
+                board.drop_dobber(6, "h");
+
+            Assert.AreEqual(board.is_board_full(), true);
         }
     }
 }

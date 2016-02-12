@@ -31,7 +31,7 @@ namespace Game_Elements
                 Console.Write("| ");
                 for (int x = 0; x < board.columns; x++)
                 {
-                    cell_contents = board.getCell(x, y);
+                    cell_contents = board.get_cell(x, y);
                     if (!cell_contents.Equals(" "))
                         Console.BackgroundColor = (cell_contents.Equals("1")) ? ConsoleColor.Blue : ConsoleColor.Red;
 

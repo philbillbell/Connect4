@@ -36,7 +36,7 @@ namespace Game_Elements
                     }
                 }
                 
-                if (gameboard.isBoardFull())
+                if (gameboard.is_board_full())
                 {
                     Console.WriteLine("Draw");
                     return false;

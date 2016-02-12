@@ -80,7 +80,7 @@ namespace Game_Elements
                 flag = get_position_from_user(ref pos);
                 if (flag)
                 {
-                    if (!gameboard.dropDobber(pos - 1, dobber()))
+                    if (!gameboard.drop_dobber(pos - 1, dobber()))
                     {
                         reset_cursor();
                         Console.WriteLine("Error with column, please select a new column");
@@ -99,7 +99,7 @@ namespace Game_Elements
             while (find_position)
             {
                 computer_position = r.Next(7);
-                if (gameboard.dropDobber(computer_position, dobber()))
+                if (gameboard.drop_dobber(computer_position, dobber()))
                     find_position = false;
             }
         }

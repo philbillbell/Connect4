@@ -22,18 +22,18 @@ namespace Game_Elements
         {
             for (int y = 0; y < board.rows; y++)
             {
-                if (check_win(board.getRow(y), dobber_win))
+                if (check_win(board.get_row(y), dobber_win))
                     return true;
             }
 
             return false;
         }
 
-        private bool check_Vertical_win(GameBoard board, string dobber_win)
+        private bool check_vertical_win(GameBoard board, string dobber_win)
         {
             for (int x = 0; x < board.columns; x++)
             {
-                if (check_win(board.getColumn(x), dobber_win))
+                if (check_win(board.get_column(x), dobber_win))
                     return true;
             }
             return false;
@@ -41,14 +41,14 @@ namespace Game_Elements
 
         private bool check_diagnal(GameBoard board, int x, int y, string dobber_win, Func<int, int> Xdel, Func<int, int> Ydel)
         {
-            string current_diag = board.getDiagnal(x, y, Xdel, Ydel);
+            string current_diag = board.get_diagnal(x, y, Xdel, Ydel);
             if (check_win(current_diag, dobber_win))
                 return true;
 
             return false;
         }
 
-        private bool check_Diagnal_win(GameBoard board, string dobber_win)
+        private bool check_diagnal_win(GameBoard board, string dobber_win)
         {
             for (int y = 0; y < board.rows; y++)
             {
@@ -73,7 +73,7 @@ namespace Game_Elements
         
         public bool check_for_win(GameBoard board, string dobber_win)
         {
-            if (check_Horizontal_win(board, dobber_win) || check_Vertical_win(board, dobber_win) || check_Diagnal_win(board, dobber_win))
+            if (check_Horizontal_win(board, dobber_win) || check_vertical_win(board, dobber_win) || check_diagnal_win(board, dobber_win))
                 return true;
             
             return false;
