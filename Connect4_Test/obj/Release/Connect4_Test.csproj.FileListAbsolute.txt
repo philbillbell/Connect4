@@ -1,0 +1,7 @@
+H:\Development\Connect4\Connect4_Test\bin\Release\Connect4_Test.dll
+H:\Development\Connect4\Connect4_Test\bin\Release\Connect4_Test.pdb
+H:\Development\Connect4\Connect4_Test\bin\Release\Game_Elements.dll
+H:\Development\Connect4\Connect4_Test\bin\Release\Game_Elements.pdb
+H:\Development\Connect4\Connect4_Test\obj\Release\Connect4_Test.csprojResolveAssemblyReference.cache
+H:\Development\Connect4\Connect4_Test\obj\Release\Connect4_Test.dll
+H:\Development\Connect4\Connect4_Test\obj\Release\Connect4_Test.pdb

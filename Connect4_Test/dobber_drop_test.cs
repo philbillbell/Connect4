@@ -7,6 +7,17 @@ namespace Connect4_Test
     [TestClass]
     public class dobber_drop_test
     {
+        GameRules rules = null;
+        GameBoard board = null;
+
+        [TestInitialize]
+        public void testInit()
+        {
+            rules = new GameRules();
+            board = new GameBoard();
+            board.init();
+        }
+
         [TestMethod]
         public void play_drops_dobber_into_the_first_row()
         {
@@ -19,9 +30,6 @@ namespace Connect4_Test
         [TestMethod]
         public void play_drops_8_dobbers_into_the_first_row()
         {
-            GameBoard board = new GameBoard();
-            board.init();
-
             Assert.AreEqual(board.drop_dobber(0, "h"), true);
             Assert.AreEqual(board.drop_dobber(0, "h"), true);
             Assert.AreEqual(board.drop_dobber(0, "h"), true);
@@ -34,10 +42,6 @@ namespace Connect4_Test
         [TestMethod]
         public void play_drops_4_dobbers_into_the_first_row_and_check_win()
         {
-            GameRules rules = new GameRules();
-            GameBoard board = new GameBoard();
-            board.init();
-
             Assert.AreEqual(board.drop_dobber(0, "h"), true);
             Assert.AreEqual(rules.check_for_win(board, "hhhh"), false);
             Assert.AreEqual(board.drop_dobber(0, "h"), true);
@@ -51,19 +55,12 @@ namespace Connect4_Test
         [TestMethod]
         public void play_drops_a_dobber_in_pos_outside_maxtrix()
         {
-            GameRules rules = new GameRules();
-            GameBoard board = new GameBoard();
-            board.init();
-
             Assert.AreEqual(board.drop_dobber(22, "h"), false);
         }
 
         [TestMethod]
         public void check_for_full_board()
         {
-            GameRules rules = new GameRules();
-            GameBoard board = new GameBoard();
-            board.init();
             int i = 0;
 
             for (i = 0; i < 6; i++)
