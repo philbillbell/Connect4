@@ -53,7 +53,6 @@ namespace Game_Elements
 
         private bool get_position_from_user(ref int location)
         {
-            get_cursor_position();
             string answer = "";
             Console.Write("Player: " + index.ToString() + " Please enter the column you would like to drop a dobber in: ");
             answer = Console.ReadLine();
@@ -133,6 +132,8 @@ namespace Game_Elements
         {
             Console.SetCursorPosition(origCol, origRow);
             Console.Write(new string(' ', Console.WindowWidth));
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(origCol, origRow);
         }
 
         private bool human;
