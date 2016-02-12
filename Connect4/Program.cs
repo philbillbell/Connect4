@@ -13,8 +13,13 @@ namespace Connect4
         {
 
             GamePlay gameplay = new GamePlay();
-
-            gameplay.main_game_play();
+            try {
+                gameplay.main_game_play();
+            }
+            catch
+            {
+                Console.WriteLine("Game terminated unexpectantly... sorry about that!");
+            }
 
         }
     }
