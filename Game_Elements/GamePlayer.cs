@@ -11,7 +11,7 @@ namespace Game_Elements
         public GamePlayer(int index)
         {
             this.index = index;
-            create_dobber_win(4);
+            create_dobber_win(4); //change this number and play 5 in row
         }
 
         private void create_dobber_win(int size)

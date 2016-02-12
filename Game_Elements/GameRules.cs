@@ -53,7 +53,7 @@ namespace Game_Elements
             for (int y = 0; y < board.rows; y++)
             {
                 for (int x = 0; x < board.columns; x++)
-                {
+                {//the contents of this loop assume that we need a min of 4 to win, remove the if's and it will go a low as you want
                     if (x < 4 && y < 3)
                     {//South east / north west possible
                         if (check_diagnal(board, x, y, dobber_win, (Coord) => { return ++Coord; }, (Coord) => { return ++Coord; }))

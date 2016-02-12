@@ -45,6 +45,7 @@ namespace Game_Elements
                 
                 if (gameboard.is_board_full())
                 {
+                    displayboard.show_board(gameboard);
                     Console.WriteLine("Draw");
                     return false;
                 }
