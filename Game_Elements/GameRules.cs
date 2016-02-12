@@ -13,43 +13,42 @@ namespace Game_Elements
             
         }   
 
-
-        private bool check_win(string row)
+        private bool check_win(string row, string dobber_win)
         {
-            return (row.Contains(human_win) || row.Contains(computer_win));
+            return (row.Contains(dobber_win));
         }
 
-        private bool check_Horizontal_win(GameBoard board)
+        private bool check_Horizontal_win(GameBoard board, string dobber_win)
         {
             for (int y = 0; y < board.rows; y++)
             {
-                if (check_win(board.getRow(y)))
+                if (check_win(board.getRow(y), dobber_win))
                     return true;
             }
 
             return false;
         }
 
-        private bool check_Vertical_win(GameBoard board)
+        private bool check_Vertical_win(GameBoard board, string dobber_win)
         {
             for (int x = 0; x < board.columns; x++)
             {
-                if (check_win(board.getColumn(x)))
+                if (check_win(board.getColumn(x), dobber_win))
                     return true;
             }
             return false;
         }
 
-        private bool check_diagnal(GameBoard board, int x, int y, Func<int, int> Xdel, Func<int, int> Ydel)
+        private bool check_diagnal(GameBoard board, int x, int y, string dobber_win, Func<int, int> Xdel, Func<int, int> Ydel)
         {
             string current_diag = board.getDiagnal(x, y, Xdel, Ydel);
-            if (check_win(current_diag))
+            if (check_win(current_diag, dobber_win))
                 return true;
 
             return false;
         }
 
-        private bool check_Diagnal_win(GameBoard board)
+        private bool check_Diagnal_win(GameBoard board, string dobber_win)
         {
             for (int y = 0; y < board.rows; y++)
             {
@@ -57,13 +56,13 @@ namespace Game_Elements
                 {
                     if (x < 4 && y < 3)
                     {//South east / north west possible
-                        if (check_diagnal(board, x, y, (Coord) => { return ++Coord; }, (Coord) => { return ++Coord; }))
-                            return true;
+                        if (check_diagnal(board, x, y, dobber_win, (Coord) => { return ++Coord; }, (Coord) => { return ++Coord; }))
+                            return true; 
                     }
 
                     if (x > 2 && y < 3)
                     {//South west / north east possible
-                        if (check_diagnal(board, x, y, (Coord) => { return --Coord; }, (Coord) => { return ++Coord; }))
+                        if (check_diagnal(board, x, y, dobber_win, (Coord) => { return --Coord; }, (Coord) => { return ++Coord; }))
                             return true;
                     }
                 }
@@ -72,15 +71,12 @@ namespace Game_Elements
         }
 
         
-        public bool check_for_win(GameBoard board)
+        public bool check_for_win(GameBoard board, string dobber_win)
         {
-            if (check_Horizontal_win(board) || check_Vertical_win(board) || check_Diagnal_win(board))
+            if (check_Horizontal_win(board, dobber_win) || check_Vertical_win(board, dobber_win) || check_Diagnal_win(board, dobber_win))
                 return true;
             
             return false;
         }
-
-        private const string computer_win = "cccc";
-        private const string human_win = "hhhh";
     }
 }

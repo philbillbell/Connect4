@@ -13,83 +13,30 @@ namespace Game_Elements
             rules = new GameRules();
             gameboard = new GameBoard();
             displayboard = new DisplayBoard();
-        }
-
-        private bool get_position_from_user(ref int location)
-        {
-            string answer = "";
-            displayboard.show_board(gameboard);
-            Console.Write("Please enter the column you would like to drop a dobber in: ");
-            answer = Console.ReadLine();
-
-            if (!Int32.TryParse(answer, out location))
-                displayboard.message = "Error with what you enterd: 1-7 please";
-            else
-                return true;
-
-            return false;
-        }
-
-        private bool human_go()
-        {
-            int pos = -1;
-            bool flag = false;
-
-            do
-            {
-                flag = get_position_from_user(ref pos);
-                if (flag)
-                {
-                    if (!gameboard.dropDobber(pos - 1, "h"))
-                    {
-                        displayboard.message = "Error with column, please select a new column";
-                        flag = false;
-                    }
-                }
-            } while (!flag);
-            return true;
-        }
-
-        private void computer_go()
-        {
-            bool find_position = true;
-            Random r = new Random(DateTime.Now.Millisecond);
-            int computer_position = 0;
-
-            while (find_position)
-            {
-                computer_position = r.Next(7);
-                if (gameboard.dropDobber(computer_position, "c"))
-                    find_position = false;
-            }
+            players = new List<GamePlayer>();
         }
 
         public bool game_play()
         {
-            bool continue_game = true;
+            bool continue_game_flag = true;
             gameboard.init();
 
-            while (continue_game)
+            while (continue_game_flag)
             {
-                human_go();
-                if (rules.check_for_win(gameboard))
+                foreach(GamePlayer player in players)
                 {
-                    displayboard.message = "Winner Winner Chicken Dinner";
                     displayboard.show_board(gameboard);
-                    return true;
-                }
-                else
-                {
-                    computer_go();
-                    if (rules.check_for_win(gameboard))
+                    player.go(ref gameboard);
+
+                    if (rules.check_for_win(gameboard, player.get_dobber_win()))
                     {
-                        displayboard.message = "Winner Winner Chicken Dinner... but not for you!";
+                        displayboard.message = "Player: " + player.dobber() + " Winner Winner Chicken Dinner";
                         displayboard.show_board(gameboard);
-                        return false;
+                        return true;
                     }
                 }
-
-                if(gameboard.isBoardFull())
+                
+                if (gameboard.isBoardFull())
                 {
                     Console.WriteLine("Draw");
                     return false;
@@ -98,10 +45,24 @@ namespace Game_Elements
             return false;
         }
 
+        private void create_players()
+        {
+            GamePlayer player;
+
+            for (int i = 1; i < 3; ++i)
+            {
+                player = new GamePlayer(i);
+                player.pick_player();
+                players.Add(player);
+            }
+        }
+
         public void main_game_play()
         {
             bool play_again = true;
             string answer = "";
+
+            create_players();
 
             while (play_again)
             {
@@ -115,5 +76,6 @@ namespace Game_Elements
         GameRules rules = null;
         GameBoard gameboard = null;
         DisplayBoard displayboard = null;
+        List<GamePlayer> players = null;
     }
 }

@@ -43,6 +43,7 @@
     <Compile Include="DisplayBoard.cs" />
     <Compile Include="GameBoard.cs" />
     <Compile Include="GamePlay.cs" />
+    <Compile Include="GamePlayer.cs" />
     <Compile Include="GameRules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
